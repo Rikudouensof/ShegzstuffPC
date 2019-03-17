@@ -35,30 +35,23 @@
                                  VerticalAlignment="Center"
                                  x:Name="Whatsappjoin"
                                  FontSize="25"
-                                 Click="Whatsappjoin_Click"
                                  Margin="00,20,00,00"
+                                 
                                  
                             />
                 <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
-                        VerticalAlignment="Center">
+                        VerticalAlignment="Center"
+                            Visibility="Collapsed">
 
-                    <ComboBox x:Name="Selectsubject"
-                      PlaceholderText="Select  subject"
+                    <ComboBox x:Name="SelectVersion"
+                      PlaceholderText="Select  Version"
                       RelativePanel.AlignLeftWithPanel="True"
                       Background="White"
                       Margin="00,60,20,00"
-                      >
-                        <x:String>English</x:String>
-                        <x:String>Math</x:String>
-                        <x:String>Physics</x:String>
-                        <x:String>Account</x:String>
-                        <x:String>Economics</x:String>
-                        <x:String>Chemistry</x:String>
-                        <x:String>Biology</x:String>
-                        <x:String>Commerce</x:String>
-                        <x:String>Government</x:String>
-                    </ComboBox>
+                      SelectionChanged="SelectVersion_SelectionChanged"
+                              Visibility="Collapsed"
+                      />
 
 
                     <ComboBox x:Name="Changesubject"
@@ -66,23 +59,14 @@
                       RelativePanel.AlignLeftWithPanel="True"
                       Background="White"
                       Margin="00,60,20,00"
-                      >
-                        <x:String>English</x:String>
-                        <x:String>Math</x:String>
-                        <x:String>Physics</x:String>
-                        <x:String>Account</x:String>
-                        <x:String>Economics</x:String>
-                        <x:String>Chemistry</x:String>
-                        <x:String>Biology</x:String>
-                        <x:String>Commerce</x:String>
-                        <x:String>Government</x:String>
-                    </ComboBox>
+                      />
+
 
                 </StackPanel>
 
                 <Button 
                 Width="300"
-                Content="Start"
+                Content="Start  Jamb CBT"
                 Click="Button_Click"
                 FontSize="30"
                 HorizontalAlignment="Center"
@@ -90,6 +74,7 @@
                 Background="Green"
                 Foreground="White"
                 />
+                
 
             </StackPanel>
             <StackPanel Grid.Row="1"
@@ -98,7 +83,7 @@
 
                 <Button 
                 Width="300"
-                Content="Jamb Brochure"
+                Content="Jamb brochure"
                 Click="JambBrochureButton_Click"
                 FontSize="30"
                 HorizontalAlignment="Center"
@@ -111,7 +96,7 @@
 
                 <Button 
                 Width="300"
-                Content="Jamb SYllabuls"
+                Content="Jamb syllabus"
                 Click="JambsylabButton_Click"
                 FontSize="30"
                 HorizontalAlignment="Center"
@@ -120,25 +105,25 @@
                 Foreground="White"
                 x:Name="JambsylabButton"
                 />
-                
-                <HyperlinkButton 
+
+                <Button 
                 Width="300"
                 Content="Check jamb result"
-                Click="JambBrochureButton_Click"
+                Click="JambResult_Click"
                 FontSize="30"
                 HorizontalAlignment="Center"
                 Margin="00,20,00,00"
                 Background="Green"
                 Foreground="White"
                 x:Name="JambResult"
-               NavigateUri="https://www.jamb.org.ng/ExamSlipPrinting1/CheckUTMEResults"
                 />
 
 
             </StackPanel>
+            
         </Grid>
 
 
     </ScrollViewer>
-    
+
 </Page>

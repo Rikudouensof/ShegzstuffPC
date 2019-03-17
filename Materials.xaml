@@ -8,37 +8,38 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid  Background="Teal">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-
-        <Button Background="Black"
-                Foreground="White"
-                FontFamily="Segoe MDL2 assets"
-                Content="&#xE112;"
-                x:Name="Backbutton"
-                Click="Backbutton_Click"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-            />
 
 
 
-        <StackPanel HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
-                    Padding="00,40,00,00"
-                    x:Name="materialStackPanel"
-                    Grid.Column="1">
+    <ScrollViewer Grid.Column="2"
+                      ScrollViewer.IsVerticalRailEnabled="True"
+                      
+                      >
 
-            
+        <Grid  Background="Teal">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <Button 
-                Width="300"
-                Content="Jamb Syllabuls"
+
+        <Button 
+                
+                Content="Jamb syllabus"
                 Click="JambsylabButton_Click"
                 FontSize="30"
                 HorizontalAlignment="Center"
@@ -46,12 +47,13 @@
                 Background="Green"
                 Foreground="White"
                 x:Name="JambsylabButton"
+                
                 />
 
-            <Button 
-                Width="300"
-                Content="Jamb Brochre"
-                Click="JambsylabButton_Click"
+                <Button 
+               Grid.Row="1"
+                Content="Jamb brochure"
+                Click="JambbrocureButton_Click"
                 FontSize="30"
                 HorizontalAlignment="Center"
                 Margin="00,20,10,00"
@@ -59,21 +61,13 @@
                 Foreground="White"
                 x:Name="JambbrocureButton"
                 />
-        </StackPanel>
-
-        <ScrollViewer Grid.Column="2"
-                      ScrollViewer.IsVerticalRailEnabled="True"
-                      x:Name="Jambqueststackpannel"
-                      >
             
-        
-        <StackPanel HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
-                    Padding="00,40,00,00"
-                    >
 
-            <Button 
-                Width="300"
+
+
+            
+
+                <Button 
                 Content="English past question (Jamb)"
                 Click="EnglishButton_Click"
                 FontSize="30"
@@ -82,23 +76,40 @@
                 Background="Green"
                 Foreground="White"
                 x:Name="EnglishButton"
+                Grid.Column="1"
+                    HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 />
 
-            <Button 
-                Width="300"
-                Content="Math past question (Jamb)"
-                Click="MathButton_Click"
+                <Button 
+                 Grid.Row="2"
+                Grid.Column="2"
                 FontSize="30"
                 HorizontalAlignment="Center"
                 Margin="00,20,10,00"
                 Background="Green"
                 Foreground="White"
                 x:Name="MathButton"
+                    HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Click="MathButton_Click"
+                />
+            <Button 
+                 Grid.Row="2"
+                Grid.Column="3"
+                FontSize="30"
+                HorizontalAlignment="Center"
+                Margin="00,20,10,00"
+                Background="Green"
+                Foreground="White"
+                x:Name="MathButton2"
+                    HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Click="MathButton2_Click"
                 />
 
                 <Button 
-                Width="300"
-                Content="Physics past question (Jamb)"
+                Grid.Column="2"
                 Click="physicsButton_Click"
                 FontSize="30"
                 HorizontalAlignment="Center"
@@ -106,11 +117,12 @@
                 Background="Green"
                 Foreground="White"
                 x:Name="physicsButton"
+                    HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 />
 
                 <Button 
-                Width="300"
-                Content="Economics past question (Jamb)"
+                Grid.Column="3"
                 Click="EconsButton_Click"
                 FontSize="30"
                 HorizontalAlignment="Center"
@@ -118,11 +130,12 @@
                 Background="Green"
                 Foreground="White"
                 x:Name="EconsButton"
+                    HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 />
 
                 <Button 
-                Width="300"
-                Content="Chemistry past question (Jamb)"
+                Grid.Column="4"
                 Click="ChemistryButton_Click"
                 FontSize="30"
                 HorizontalAlignment="Center"
@@ -130,12 +143,14 @@
                 Background="Green"
                 Foreground="White"
                 x:Name="ChemistryButton"
+                    HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 />
 
 
                 <Button 
-                Width="300"
-                Content="Government past question (Jamb)"
+                Grid.Column="1"
+                Grid.Row="1"
                 Click="GovernmentButton_Click"
                 FontSize="30"
                 HorizontalAlignment="Center"
@@ -143,11 +158,13 @@
                 Background="Green"
                 Foreground="White"
                 x:Name="GovernmentButton"
+                    HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 />
 
                 <Button 
-                Width="300"
-                Content="Biology past question (Jamb)"
+                Grid.Column="2"
+                    Grid.Row="1"
                 Click="BiologyButton_Click"
                 FontSize="30"
                 HorizontalAlignment="Center"
@@ -155,11 +172,13 @@
                 Background="Green"
                 Foreground="White"
                 x:Name="BiologyButton"
+                    HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 />
 
                 <Button 
-                Width="300"
-                Content="Commerce past question (Jamb)"
+                Grid.Column="1"
+                    Grid.Row="2"
                 Click="CommerceButton_Click"
                 FontSize="30"
                 HorizontalAlignment="Center"
@@ -167,11 +186,13 @@
                 Background="Green"
                 Foreground="White"
                 x:Name="CommerceButton"
+                    HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 />
 
                 <Button 
-                Width="300"
-                Content="Account past question (Jamb)"
+                Grid.Row="1"
+                    Grid.Column="3"
                 Click="AccountButton_Click"
                 FontSize="30"
                 HorizontalAlignment="Center"
@@ -179,11 +200,15 @@
                 Background="Green"
                 Foreground="White"
                 x:Name="AccountButton"
+                    HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 />
 
                 <Button 
-                Width="300"
-                Content="CRK past question (Jamb)"
+                Grid.Column="4"
+                    Grid.Row="1"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 Click="CRKButton_Click"
                 FontSize="30"
                 HorizontalAlignment="Center"
@@ -191,30 +216,42 @@
                 Background="Green"
                 Foreground="White"
                 x:Name="CRKButton"
+                
                 />
+            <HyperlinkButton NavigateUri="https://www.youtube.com/watch?v=GdYPu_t4cvw"
+                             Grid.Row="2"
+                             Grid.Column="0"
+                             Content="Sweet 16 audiobook"
+                             FontSize="30"
+                             HorizontalAlignment="Center"
+                             Foreground="White"
+                             Background="DarkGreen"/>
 
-            </StackPanel>
-
-        </ScrollViewer>
-
-
-        <ScrollViewer Grid.Column="1"
-                      Grid.ColumnSpan="2"
+            <ScrollViewer Grid.Column="0"
+                      Grid.ColumnSpan="5"
                       ZoomMode="Enabled"
                       HorizontalAlignment="Stretch"
                       VerticalAlignment="Stretch"
-                      
+                      Visibility="Collapsed"
+                      x:Name="pdfViewer"
                       >
-            <ItemsControl ItemsSource="{Binding PdfPages,Mode=TwoWay}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Image Source="{Binding}" Margin="0 2"/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-            
-        </ScrollViewer>
+                    <ItemsControl ItemsSource="{Binding PdfPages,Mode=TwoWay}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding}" Margin="0 2"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                </ScrollViewer>
 
 
-    </Grid>
+
+
+
+
+
+        </Grid>
+
+    </ScrollViewer>
 </Page>

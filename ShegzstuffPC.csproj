@@ -17,7 +17,14 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
-    <PackageCertificateKeyFile>ShegzstuffPC_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>ShegzstuffPC_StoreKey.pfx</PackageCertificateKeyFile>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>928321C9F8B0F1ABA642C03EC584EC12D7B41CE2</PackageCertificateThumbprint>
+    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
+    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -92,6 +99,9 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Admin.xaml.cs">
+      <DependentUpon>Admin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -104,13 +114,21 @@
     <Compile Include="JambCBT.xaml.cs">
       <DependentUpon>JambCBT.xaml</DependentUpon>
     </Compile>
+    <Compile Include="JambResult.xaml.cs">
+      <DependentUpon>JambResult.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Materials.xaml.cs">
       <DependentUpon>Materials.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Highscore.cs" />
+    <Compile Include="Models\PaperType.cs" />
+    <Compile Include="Models\PaperVer.cs" />
     <Compile Include="Models\TestExam.cs" />
+    <Compile Include="Models\TestimonialsClass.cs" />
+    <Compile Include="Models\WhatsappUrl.cs" />
     <Compile Include="Nabteb.xaml.cs">
       <DependentUpon>Nabteb.xaml</DependentUpon>
     </Compile>
@@ -121,15 +139,23 @@
     <Compile Include="QUestionerePage.xaml.cs">
       <DependentUpon>QUestionerePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Testimonials.xaml.cs">
+      <DependentUpon>Testimonials.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WaecTest.xaml.cs">
       <DependentUpon>WaecTest.xaml</DependentUpon>
     </Compile>
+    <Compile Include="zeLists\PaperVersionList.cs" />
+    <Compile Include="zeLists\VerList.cs" />
+    <Compile Include="zeLists\ZeQuestionsList.cs" />
+    <Compile Include="zeLists\zeTestimonialList.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
     <Content Include="Assets\Fonts\space age.ttf" />
+    <None Include="Assets\pdffile.pdf" />
     <None Include="Assets\PDF\Account.pdf" />
     <None Include="Assets\PDF\Biology.pdf" />
     <None Include="Assets\PDF\chemistry.pdf" />
@@ -140,6 +166,7 @@
     <None Include="Assets\PDF\maths.pdf" />
     <None Include="Assets\PDF\maths2.pdf" />
     <None Include="Assets\PDF\physics.pdf" />
+    <None Include="ShegzstuffPC_StoreKey.pfx" />
     <None Include="ShegzstuffPC_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -149,14 +176,80 @@
     <Content Include="Assets\Images\Neco.png" />
     <Content Include="Assets\Images\Shegz.png" />
     <Content Include="Assets\Images\Telegram %281%29.png" />
+    <Content Include="Assets\Images\V1.01.PNG" />
+    <Content Include="Assets\Images\V1.02.PNG" />
+    <Content Include="Assets\Images\V1.03.PNG" />
+    <Content Include="Assets\Images\V1.04.PNG" />
+    <Content Include="Assets\Images\V1.V5.PNG" />
     <Content Include="Assets\Images\Whatsapp.png" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.14.11.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.14.12.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.14.13.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.14.14 %281%29.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.14.14.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.14.15 %281%29.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.14.15.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.14.16 %281%29.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.14.16.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.14.17 %281%29.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.14.17.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.34.10.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.34.13.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.34.17.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.34.20.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.34.22.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.34.23.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.36.12.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.36.13 %281%29.jpeg" />
+    <Content Include="Assets\Testimonials\WhatsApp Image 2019-02-25 at 20.36.13.jpeg" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="dataFile.txt" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +257,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ContactUs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -173,6 +270,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="JambCBT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="JambResult.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -197,6 +298,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Questionhub.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Testimonials.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

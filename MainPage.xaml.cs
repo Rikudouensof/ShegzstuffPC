@@ -62,6 +62,11 @@ namespace ShegzstuffPC
                 MyFrame.Navigate(typeof(Materials));
                 TitleTextBock.Text = "Materials";
             }
+            //else if (Admin.IsSelected)
+            //{
+            //    MyFrame.Navigate(typeof(Admin));
+            //    TitleTextBock.Text = "Admin";
+            //}
         }
 
         private void ContactUS_Click(object sender, RoutedEventArgs e)
@@ -76,6 +81,12 @@ namespace ShegzstuffPC
         {
             MyFrame.Navigate(typeof(HighScore));
             TitleTextBock.Text = "High Score";
+        }
+
+        private void Testimonial_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Navigate(typeof(Testimonials));
+            TitleTextBock.Text = "Testimonials";
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ShegzstuffPC.Models;
+using ShegzstuffPC.zeLists;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,31 +24,60 @@ namespace ShegzstuffPC
     /// </summary>
     public sealed partial class JambCBT : Page
     {
-        public string walter = "http//otlook.com";
+        public string walter = "http//outlook.com";
+        string selectedPaperVersion = "V1";
+        
 
         public JambCBT()
         {
+            
             this.InitializeComponent();
+            Whatsappjoin.NavigateUri = new Uri( "https://chat.whatsapp.com/HPmOUETUtWr9K0LzMhUHBz");
+            List<PaperType> zePapertypes = PaperVersionList.LoadPaperType();
+            List<PaperVer> zePaperver = VerList.LoadVer();
+            var VersionList = zePaperver.OrderBy(x => x.version).ToList().Select(x => x.version);
+            var SubjectLists = zePapertypes.Where(x => x.PaperVersion == selectedPaperVersion).OrderBy(x => x.Subject).ToList().Select(x => x.Subject);
+            Changesubject.Visibility = Visibility.Collapsed;
+            SelectVersion.ItemsSource = VersionList;
+            Changesubject.ItemsSource = SubjectLists;
+            
+
+
         }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
             Frame.Navigate(typeof(QUestionerePage));
+
+
         }
 
         private void JambBrochureButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(Materials));
         }
 
         private void JambsylabButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(Materials));
         }
 
-        private void Whatsappjoin_Click(object sender, RoutedEventArgs e)
+
+
+        private void JambResult_Click(object sender, RoutedEventArgs e)
         {
-            Whatsappjoin.NavigateUri = walter.ToString()
+            Frame.Navigate(typeof(JambResult));
         }
+
+        private void SelectVersion_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selectedPaperVersion = SelectVersion.SelectedItem.ToString();
+            Changesubject.Visibility = Visibility.Visible;
+            
+
+        }
+
     }
 }

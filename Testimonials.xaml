@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="ShegzstuffPC.Testimonials"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ShegzstuffPC"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+
+    <ScrollViewer ScrollViewer.VerticalScrollMode="Auto"
+                  VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Auto"
+                  HorizontalScrollMode="Auto"
+                  >
+        <FlipView ScrollViewer.ZoomMode="Enabled" Background="DarkSlateGray">
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.14.11.jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.14.12.jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.14.13.jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.14.14 (1).jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.14.14.jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.14.15 (1).jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.14.15.jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.14.16 (1).jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.14.16.jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.14.17 (1).jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.14.17.jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.34.10.jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.34.10.jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.34.13.jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.34.20.jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.34.22.jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.34.23.jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.36.12.jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.36.13 (1).jpeg" />
+            <Image Source="ms-appx:///Assets/Testimonials/WhatsApp Image 2019-02-25 at 20.36.13.jpeg" />
+        </FlipView>
+
+    </ScrollViewer>
+    
+
+</Page>

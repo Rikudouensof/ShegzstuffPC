@@ -25,6 +25,11 @@ namespace ShegzstuffPC
         public HighScore()
         {
             this.InitializeComponent();
+            var highScores = 
+            Title.Text = "Date" + '\t' + '\t' + '\t' + '\t' + "Score";
+            Content.Text = DateTime.Now.ToString() + '\t' + '\t' + '\t' + '\t' + "score";
         }
+
+        
     }
 }

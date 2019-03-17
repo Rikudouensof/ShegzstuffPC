@@ -28,31 +28,64 @@
             <RelativePanel Grid.Row="0"
                        >
 
-                <ComboBox x:Name="Changesubject"
-                      PlaceholderText="Change subject"
+
+                <ComboBox x:Name="ChangeVersion"
+                      PlaceholderText="Change Version"
                       RelativePanel.AlignLeftWithPanel="True"
                       Background="White"
-                      >
-                    <x:String>English</x:String>
-                    <x:String>Math</x:String>
-                    <x:String>Physics</x:String>
-                    <x:String>Account</x:String>
-                    <x:String>Economics</x:String>
-                    <x:String>Chemistry</x:String>
-                    <x:String>Biology</x:String>
-                    <x:String>Commerce</x:String>
-                    <x:String>Government</x:String>
+                      SelectionChanged="ChangeVersion_SelectionChanged"
+                      Tapped="ChangeVersion_Tapped"
+                      />
+
+
+                <ComboBox x:Name="Changesubject"
+                      PlaceholderText="Change subject"
+                      RelativePanel.RightOf="ChangeVersion"
+                      Background="White"
+                      SelectionChanged="Changesubject_SelectionChanged"
+                          Visibility="Collapsed"
+                      />
+
+                <Button x:Name="Start"
+                            Background="Green"
+                            Foreground="White"
+                            FontSize="18"
+                            Click="Start_Click"
+                            Content="Start !!!"
+                            RelativePanel.RightOf="Changesubject"  
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center" 
+                            Margin="0,0,0,0"
+                        Visibility="Collapsed"
+                            />
 
 
 
-                </ComboBox>
 
-                <TextBlock x:Name="Timer" 
+                <TextBlock x:Name="TimerMin" 
+                       RelativePanel.LeftOf="Partition"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="24"
+                       Text="00"
+                       Foreground="Gray"
+                       FontWeight="Bold"/>
+
+                <TextBlock x:Name="Partition" 
                        RelativePanel.AlignHorizontalCenterWithPanel="True"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        FontSize="24"
-                       Text="00:00"
+                       Text=":"
+                       Foreground="Gray"
+                       FontWeight="Bold"/>
+
+                <TextBlock x:Name="TimerSec" 
+                       RelativePanel.RightOf="Partition"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="24"
+                       Text="00"
                        Foreground="Gray"
                        FontWeight="Bold"/>
 
@@ -74,16 +107,19 @@
                        FontSize="24"
                        FontWeight="Bold"
                        Foreground="Gray"
+                       Visibility="Collapsed"
+                        
                        />
 
                 <Button x:Name="Restart"
                             Background="Green"
                             Foreground="White"
                             FontSize="18"
-                            Click="Submit_Click"
+                            Click="Restart_Click"
                             Content="Restart!"
                             Margin="00,00,10,00"
-                            RelativePanel.RightOf="Changesubject"
+                            RelativePanel.RightOf="Start"
+                        Visibility="Collapsed"
                             />
                 <Button x:Name="Submit"
                             Background="Green"
@@ -93,64 +129,84 @@
                             Content="Submit !!!"
                             Margin="00,00,10,00"
                             RelativePanel.RightOf="Restart"
+                        Visibility="Collapsed"
                             />
 
             </RelativePanel>
 
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="1" 
+                        HorizontalAlignment="Stretch" 
+                       Orientation="Vertical" 
+                        VerticalAlignment="Stretch">
 
-
-                <TextBox  HorizontalAlignment="Center"
+                <TextBlock  HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    TextWrapping="Wrap"
                    TextAlignment="Center"
                    FontWeight="Bold"
                    Text=""
-                   Background="LightGreen"
+                   x:Name="SubjectTextBox"
+                   FontSize="22"
+                   Margin="00,00,50,30"
+                  Foreground="DarkGreen"
+                           
+                   />
+
+
+                <TextBlock  HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   TextWrapping="Wrap"
+                   TextAlignment="Center"
+                   FontWeight="Bold"
+                   Text=""
+                   Foreground="DarkGreen"
+                   x:Name="InstructionTextBox"
                     Height="100"
                     Width="700"
-                   BorderBrush="Black"
-                   FontSize="22"
-                   IsReadOnly="True" 
-                   PlaceholderText="What are the questions?"
-                   Margin="00,00,20,00"
+                   FontSize="17"
+                   Margin="00,00,50,30"
                    />
+
+
 
 
                 <StackPanel 
                     Margin="00,00,20,00"
-                    Orientation="Horizontal"
+                   Orientation="Vertical"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    
+                    x:Name="QuestionStackpannel"
                     
                    >
-                <Image x:Name="questionImage" 
-                   Source="Assets/Square150x150Logo.scale-200.png"
-                   Height="300"
-                   Width="300"
-                   Stretch="UniformToFill"
-                   Margin="00,00,30,00"
-                    
-                   />
 
-                <TextBox  HorizontalAlignment="Center"
+                    
+                        
+                                <Image x:Name="questionImage" 
+                   Source="{Binding }"
+                   Stretch="None"
+                   Margin="00,00,30,00"
+                   
+                   />
+                           
+                    
+                    
+                    
+
+
+                    <TextBlock  HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    TextWrapping="Wrap"
                    TextAlignment="Center"
                    FontWeight="Bold"
                    Text=""
-                   Background="LightGreen"
-                    Height="300"
+                   x:Name="QuestionTextBox"
+                   Foreground="DarkGreen" 
                     Width="300"
-                   BorderBrush="Black"
                    FontSize="22"
-                   IsReadOnly="True" 
-                   PlaceholderText="What are the questions?"
                    />
-                
 
-            </StackPanel>
+
+                </StackPanel>
             </StackPanel>
 
 
@@ -159,6 +215,8 @@
                     HorizontalAlignment="Center"
                     Grid.Row="2"
                     Padding="00,40,00,0"
+                    x:Name="OptionsStackpannel"
+                    Visibility="Collapsed"
                     >
 
                 <RadioButton x:Name="option1checkbox"
@@ -167,7 +225,8 @@
                           VerticalContentAlignment="Center"
                           FontWeight="Bold"
                           FontStyle="Oblique"
-                          GroupName="Options"/>
+                          GroupName="Options"
+                             IsChecked="False"/>
 
                 <RadioButton x:Name="option2checkbox"
                           Content="ALvada"
@@ -176,6 +235,7 @@
                           FontWeight="Bold"
                           FontStyle="Oblique"
                          GroupName="Options"
+                          IsChecked="False"
                           />
 
                 <RadioButton x:Name="option3checkbox"
@@ -185,6 +245,7 @@
                           FontWeight="Bold"
                           FontStyle="Oblique"
                            GroupName="Options"
+                           IsChecked="False"
                           />
 
                 <RadioButton x:Name="option4checkbox"
@@ -194,6 +255,7 @@
                           FontWeight="Bold"
                           FontStyle="Oblique"
                          GroupName="Options"
+                             IsChecked="False"
                           />
                 <RadioButton x:Name="option5checkbox"
                           Content="ALvada"
@@ -202,10 +264,13 @@
                           FontWeight="Bold"
                           FontStyle="Oblique"
                          GroupName="Options"
+                             IsChecked="False"
                           />
             </StackPanel>
             <ScrollViewer Grid.Row="3"
-                          Margin="00,20,00,00">
+                          Margin="00,20,00,00"
+                          x:Name="ButtonsScrolviewer"
+                          Visibility="Collapsed">
                 <StackPanel
                     Orientation="Vertical"
                     VerticalAlignment="Center"
@@ -222,7 +287,7 @@
                             Margin="00,00,10,00"
                             />
 
-                        
+
 
                         <Button x:Name="Next"
                             Background="Green"
@@ -233,7 +298,7 @@
                             Margin="00,00,10,00"
                             />
 
-                        
+
 
                     </StackPanel>
 
@@ -243,30 +308,27 @@
                              FontFamily="Calibri"
                              Margin="00,30,00,00"
                              Width="600"
+                             x:Name="ResultTextBox"
                              MinHeight="100"
                              TextWrapping="Wrap"
                              TextAlignment="Center"
-                             Text="Whe nfifm Whe nfifm Whe nfifm Whe nfifm Whe nfifm Whe nfifm Whe nfifm 
-                             Whe nfifm Whe nfifm Whe nfifm Whe nfifm Whe nfifm Whe nfifm 
-                             Whe nfifm Whe nfifm Whe nfifm Whe nfifm Whe nfifm 
-                             Whe nfifm Whe nfifm 
-                             Whe nfifm Whe nfifm 
-                             Whe nfifm Whe nfifm Whe nfifm Whe nfifm Whe nfifm "
+                             Text="Click Submit to see your score!!! "
                              />
-                    <Button x:Name="Retake"
+                    <Button x:Name="RetakeQuestionButton"
                             Background="Green"
                             Foreground="White"
                             FontSize="18"
-                            Click="Submit_Click"
+                            Click="RetakeQuestionButton_Click"
                             Content="Retake question"
                             Margin="00,00,10,00"
                             HorizontalAlignment="Center"
+                            
                              />
 
                     <StackPanel />
                 </StackPanel>
             </ScrollViewer>
-            
+
 
 
 
